@@ -16,6 +16,6 @@ public class Constants {
 
   public static final long MILLISECONDS_IN_SECONDS = 1000;
   public static final long MICROSECONDS_IN_SECONDS = 1000000;
-  public static final long NANOSECONDS_IN_SECCONDS = 1000000000;
+  public static final long NANOSECONDS_IN_SECONDS = 1000000000;
 }
 

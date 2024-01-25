@@ -151,7 +151,7 @@ public class Game {
 
         //double averageTime = gameTime / Constants.NUM_GAMES_TO_AUTOPLAY;
         double minTime = Collections.min(times);
-        timings.add(minTime / Constants.NANOSECONDS_IN_SECCONDS);
+        timings.add(minTime / Constants.NANOSECONDS_IN_SECONDS);
     }
 
     /**

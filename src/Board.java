@@ -166,10 +166,10 @@ public class Board {
     }
 
     /**
-     * colorCorner: Sets a specified area connected to the the initial flooded corner equal to the same color
+     * colorCorner: Sets a specified area connected to the initial flooded corner equal to the same color
      * as the initial flooded corner; to be used in testing
      * <p>
-     * num: number of squares including the the corner square to be colored cornerColor
+     * num: number of squares including the corner square to be colored cornerColor
      * type: 0 - triangle fill
      * 1 - horizontal fill
      * 2 - vertical fill
@@ -252,9 +252,3 @@ public class Board {
     }
 
 }
-
-
-
-
-
-
