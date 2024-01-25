@@ -11,7 +11,12 @@ public class Flood {
                               LinkedList<Coord> flooded_list,
                               Tile[][] tiles,
                               Integer board_size) {
-        // YOUR CODE test
+
+        // does stuff n things to every item in the flooded list
+        for (int i = 0; i < flooded_list.size(); i++) {
+            flooded_list.add(new Coord(i,i));
+        }
+
     }
 
     // An alternative implementation goes here.
