@@ -39,7 +39,7 @@ public class Board {
 
     /*
      * Constructs a square game board of the given size, initializing the
-     * colors of th tiles according to the two-dimensional array of colors.
+     * colors of the tiles according to the two-dimensional array of colors.
      * This is handy for testing purposes.
      */
     public Board(int size, WaterColor[][] colors) {

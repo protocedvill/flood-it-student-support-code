@@ -6,20 +6,25 @@ import java.util.*;
 
 public class Flood {
 
-    // Students implement this flood function.
+    // flood time complexity: O(???)
     public static void flood(WaterColor color,
                               LinkedList<Coord> flooded_list,
                               Tile[][] tiles,
                               Integer board_size) {
 
-        // does stuff n things to every item in the flooded list
-        for (int i = 0; i < flooded_list.size(); i++) {
-            flooded_list.add(new Coord(i,i));
-        }
+        LinkedList<Coord> toAdd = new LinkedList<>();
 
+        for (Coord coord : flooded_list) {
+            for (Coord coord2 : coord.neighbors(board_size)) {
+                if (!flooded_list.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
+                    toAdd.add(coord2);
+                }
+            }
+        }
+        flooded_list.addAll(toAdd);
     }
 
-    // An alternative implementation goes here.
+    // flood1 time complexity: O(???)
     public static void flood1(WaterColor color,
                              LinkedList<Coord> flooded_list,
                              Tile[][] tiles,
