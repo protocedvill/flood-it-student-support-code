@@ -1,6 +1,5 @@
 // Imports for the parameters of flood
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 
@@ -29,12 +28,15 @@ public class Flood {
         flooded_list.addAll(toAdd);
 
         // Checks all new squares for matching squares
+        // - Removes each square from the toAdd list when checked
+        // - Adds new matching squares to the toAdd list
+        // as the board is finite, eventually all squares will be checked and the loop will exit
         while(!toAdd.isEmpty()) {
 
             System.out.println("Checking Matching for:");
             System.out.println(floodlistToString(toAdd));
 
-            // I tried doing this only using the toAdd list, but
+            // I tried doing this only using the toAdd list as my working space, but it ran into concurrency issues
             LinkedList<Coord> toAddTmp = new LinkedList<>();
             LinkedList<Coord> toRemoveTmp = new LinkedList<>();
 
