@@ -23,8 +23,8 @@ public class Flood {
         }
 
         // Adds all first pass matches.
-        System.out.println("First Pass:");
-        System.out.println(floodlistToString(toAdd));
+        //System.out.println("First Pass:");
+        //System.out.println(floodlistToString(toAdd));
         flooded_list.addAll(toAdd);
 
         // Checks all new squares for matching squares
@@ -33,8 +33,8 @@ public class Flood {
         // as the board is finite, eventually all squares will be checked and the loop will exit
         while(!toAdd.isEmpty()) {
 
-            System.out.println("Checking Matching for:");
-            System.out.println(floodlistToString(toAdd));
+            //System.out.println("Checking Matching for:");
+            //System.out.println(floodlistToString(toAdd));
 
             // I tried doing this only using the toAdd list as my working space, but it ran into concurrency issues
             LinkedList<Coord> toAddTmp = new LinkedList<>();
@@ -43,12 +43,12 @@ public class Flood {
             for (Coord coord : toAdd) {
                 for (Coord coord2 : coord.neighbors(board_size)) {
                     if (!flooded_list.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
-                        System.out.println("Found: " + coord2 + " using " + coord);
+                        //System.out.println("Found: " + coord2 + " using " + coord);
                         toAddTmp.add(coord2);
                     }
                 }
                 // Removes current item so we can exit when the toAdd list is empty
-                System.out.println("Removing " + coord);
+                //System.out.println("Removing " + coord);
                 toRemoveTmp.add(coord);
             }
 
