@@ -16,7 +16,7 @@ public class Flood {
         // Checks all existing flooded items - adds nearby matching files to toAdd
         for (Coord coord : flooded_list) {
             for (Coord coord2 : coord.neighbors(board_size)) {
-                if (!flooded_list.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
+                if (!flooded_list.contains(coord2) && !toAdd.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
                     toAdd.add(coord2);
                 }
             }
@@ -42,7 +42,7 @@ public class Flood {
 
             for (Coord coord : toAdd) {
                 for (Coord coord2 : coord.neighbors(board_size)) {
-                    if (!flooded_list.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
+                    if (!flooded_list.contains(coord2) && !toAddTmp.contains(coord2) && coord2.onBoard(board_size) && tiles[coord2.getY()][coord2.getX()].getColor() == color) {
                         //System.out.println("Found: " + coord2 + " using " + coord);
                         toAddTmp.add(coord2);
                     }
