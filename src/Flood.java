@@ -64,10 +64,36 @@ public class Flood {
                              LinkedList<Coord> flooded_list,
                              Tile[][] tiles,
                              Integer board_size) {
-        // YOUR CODE
+
+        // do something stupid with recursion ...
+        LinkedList<Coord> toAdd = new LinkedList<>();
+
+        for (Coord coordInList : flooded_list) {
+            for (Coord coordNeighbor : coordInList.neighbors(board_size)) {
+                if (!flooded_list.contains(coordNeighbor) &&
+                    !toAdd.contains(coordNeighbor) &&
+                    tiles[coordNeighbor.getY()][coordNeighbor.getX()].getColor() == color &&
+                    coordNeighbor.onBoard(board_size))
+                {
+                    toAdd.add(coordNeighbor);
+                }
+            }
+        }
+
+        if (!toAdd.isEmpty()) {
+            flooded_list.addAll(toAdd);
+            flood1(color, flooded_list, tiles, board_size);
+        }
+
     }
 
-    public static String floodlistToString(LinkedList<Coord> flooded_list) {
+    private static boolean coordImmersedInList(LinkedList<Coord> flooded_list, Coord coord) {
+        return (flooded_list.contains(coord.left()) &&
+                flooded_list.contains(coord.right()) &&
+                flooded_list.contains(coord.up()) &&
+                flooded_list.contains(coord.down()));
+    }
+    private static String floodlistToString(LinkedList<Coord> flooded_list) {
         String output = "";
         for (Coord coord : flooded_list) {
             output = output.concat(coord.toString());
