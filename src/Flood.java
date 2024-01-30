@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Flood {
 
-    // flood time complexity: O(???)
+    // flood time complexity: O(nlog(n)) (divided by some constant)
     public static void flood(WaterColor color,
                               LinkedList<Coord> flooded_list,
                               Tile[][] tiles,
@@ -59,7 +59,7 @@ public class Flood {
         }
     }
 
-    // flood1 time complexity: O(???)
+    // flood1 time complexity: O(nlog(n)) (divided by some constant bigger than the one with flood)
     public static void flood1(WaterColor color,
                              LinkedList<Coord> flooded_list,
                              Tile[][] tiles,
